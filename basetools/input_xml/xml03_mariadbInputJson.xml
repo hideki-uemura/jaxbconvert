@@ -1,12 +1,8 @@
-<mariadbInputJson>
-  <header requestTime="2016/10/04 10:10:25.333" requestName="mariaDb" />
+<inputJson>
+ <header requestTime="2016/10/04 10:10:25.333" requestName="jenkinsslave" envet=""/>
   <body>
     <marinadbSetting
-    	install="true"
-    	dataSaveDir="/var/lib/mytql/data"
-    	sockFile="/var/lib/mytql/data/mysql.sock"
-    	dataBaseName="assured"
-    	userName="assuredUser"
-    	password="assuredPassword"/>
+    	install="true" dataSaveDir="/var/lib/mytql/data" sockFile="/var/lib/mytql/data/mysql.sock"
+    	dataBaseName="assured" userName="assuredUser" password="assuredPassword"/>
   </body>
-</mariadbInputJson>
+</inputJson>

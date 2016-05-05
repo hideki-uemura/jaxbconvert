@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="inputJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="header"/>
+        <xs:element ref="body"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="header">
+    <xs:complexType>
+      <xs:attribute name="envet" use="required" type="xs:NCName"/>
+      <xs:attribute name="requestName" use="required" type="xs:NCName"/>
+      <xs:attribute name="requestTime" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="body">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ansible"/>
+        <xs:element ref="tomcat"/>
+        <xs:element ref="marinaDb"/>
+        <xs:element ref="mongoDb"/>
+        <xs:element ref="jenkinsServer"/>
+        <xs:element ref="jenkinsSlave"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ansible">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ansibleServerStting"/>
+        <xs:element ref="ansibleExecUser"/>
+        <xs:element ref="meimeiken"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ansibleServerStting">
+    <xs:complexType>
+      <xs:attribute name="ipOrName" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="rootPass" use="required" type="xs:NCName"/>
+      <xs:attribute name="serverShubetu" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ansibleExecUser">
+    <xs:complexType>
+      <xs:attribute name="homedir" use="required" type="xs:NCName"/>
+      <xs:attribute name="password" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="uid" use="required" type="xs:NCName"/>
+      <xs:attribute name="userName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="meimeiken">
+    <xs:complexType>
+      <xs:attribute name="meimeiken" use="required" type="xs:NCName"/>
+      <xs:attribute name="url" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tomcat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="java"/>
+        <xs:element ref="tomcatSetting"/>
+        <xs:element ref="tomcatExecUser"/>
+        <xs:element ref="webApplicationSetting"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tomcatSetting">
+    <xs:complexType>
+      <xs:attribute name="ajpBindAddress" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="ajpProt" use="required" type="xs:integer"/>
+      <xs:attribute name="daemonName" use="required" type="xs:NCName"/>
+      <xs:attribute name="httpBindAddress" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="httpProt" use="required" type="xs:integer"/>
+      <xs:attribute name="install" use="required" type="xs:boolean"/>
+      <xs:attribute name="tomcatLogPath" use="required"/>
+      <xs:attribute name="tomcatRootPath" use="required"/>
+      <xs:attribute name="useAjp" use="required" type="xs:boolean"/>
+      <xs:attribute name="useHttp" use="required" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tomcatExecUser">
+    <xs:complexType>
+      <xs:attribute name="homeDir" use="required"/>
+      <xs:attribute name="password" use="required" type="xs:NCName"/>
+      <xs:attribute name="uid" use="required" type="xs:integer"/>
+      <xs:attribute name="userName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="webApplicationSetting">
+    <xs:complexType>
+      <xs:attribute name="saveKikan" use="required" type="xs:integer"/>
+      <xs:attribute name="webAppLogPath" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="marinaDb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="marinaDbSetting"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="marinaDbSetting">
+    <xs:complexType>
+      <xs:attribute name="dataBaseName" use="required" type="xs:NCName"/>
+      <xs:attribute name="dataSaveDir" use="required"/>
+      <xs:attribute name="install" use="required" type="xs:boolean"/>
+      <xs:attribute name="password" use="required" type="xs:NCName"/>
+      <xs:attribute name="sockFile" use="required"/>
+      <xs:attribute name="userName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mongoDb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mongoDbSetting"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mongoDbSetting">
+    <xs:complexType>
+      <xs:attribute name="daemonName" use="required" type="xs:NCName"/>
+      <xs:attribute name="dataBaseName" use="required" type="xs:NCName"/>
+      <xs:attribute name="dataSaveDir" use="required"/>
+      <xs:attribute name="install" use="required" type="xs:boolean"/>
+      <xs:attribute name="password" use="required" type="xs:NCName"/>
+      <xs:attribute name="sockFile" use="required"/>
+      <xs:attribute name="userName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="jenkinsServer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="java"/>
+        <xs:element ref="jenkinsServerSetting"/>
+        <xs:element ref="jenkinsServerExecUser"/>
+        <xs:element ref="seleniumGridSetting"/>
+        <xs:element ref="seleniumGridExecUser"/>
+        <xs:element ref="maven"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="jenkinsServerSetting">
+    <xs:complexType>
+      <xs:attribute name="ajpBindingAddress" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="ajpPort" use="required" type="xs:integer"/>
+      <xs:attribute name="ajpUse" use="required" type="xs:boolean"/>
+      <xs:attribute name="daemonName" use="required" type="xs:NCName"/>
+      <xs:attribute name="httpBindingAddress" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="httpPort" use="required" type="xs:integer"/>
+      <xs:attribute name="httpUse" use="required" type="xs:boolean"/>
+      <xs:attribute name="jenkinsLogPath" use="required"/>
+      <xs:attribute name="jenkinsRootPath" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="jenkinsServerExecUser">
+    <xs:complexType>
+      <xs:attribute name="homeDir" use="required"/>
+      <xs:attribute name="password" use="required" type="xs:NCName"/>
+      <xs:attribute name="uid" use="required" type="xs:integer"/>
+      <xs:attribute name="userName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="seleniumGridSetting">
+    <xs:complexType>
+      <xs:attribute name="daemonName" use="required" type="xs:NCName"/>
+      <xs:attribute name="seleniumRootPath" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="seleniumGridExecUser">
+    <xs:complexType>
+      <xs:attribute name="homeDir" use="required"/>
+      <xs:attribute name="password" use="required" type="xs:NCName"/>
+      <xs:attribute name="uid" use="required" type="xs:integer"/>
+      <xs:attribute name="userName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="jenkinsSlave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="java"/>
+        <xs:element ref="jenkinsSlaveSetting"/>
+        <xs:element ref="jenkinsExecUser"/>
+        <xs:element ref="seleniumServerSetting"/>
+        <xs:element ref="seleniumServerExecUser"/>
+        <xs:element ref="maven"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="jenkinsSlaveSetting">
+    <xs:complexType>
+      <xs:attribute name="jenkinsSlaveRootPath" use="required"/>
+      <xs:attribute name="jenkinsWorkspace" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="jenkinsExecUser">
+    <xs:complexType>
+      <xs:attribute name="homeDir" use="required"/>
+      <xs:attribute name="password" use="required" type="xs:NCName"/>
+      <xs:attribute name="uid" use="required" type="xs:integer"/>
+      <xs:attribute name="userName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="seleniumServerSetting">
+    <xs:complexType>
+      <xs:attribute name="daemonName" use="required" type="xs:NCName"/>
+      <xs:attribute name="seleniumSererRootPath" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="seleniumServerExecUser">
+    <xs:complexType>
+      <xs:attribute name="password" use="required" type="xs:NCName"/>
+      <xs:attribute name="uid" use="required" type="xs:integer"/>
+      <xs:attribute name="userName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="java">
+    <xs:complexType>
+      <xs:attribute name="install" use="required" type="xs:boolean"/>
+      <xs:attribute name="javaHome" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="maven">
+    <xs:complexType>
+      <xs:attribute name="install" use="required" type="xs:boolean"/>
+      <xs:attribute name="mavenRootPath" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

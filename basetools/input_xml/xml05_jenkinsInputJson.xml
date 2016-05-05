@@ -1,33 +1,14 @@
-<jenkinsInputJson>
-  <header requestTime="2016/10/04 10:10:25.333" requestName="jenkins" />
+<inputJson>
+ <header requestTime="2016/10/04 10:10:25.333" requestName="jenkins" envet="index"/>
   <body>
-    <java
-    	install="true"
-    	javaHome="/opt/share/java"
-    />
+    <java install="true" javaHome="/opt/share/java" />
     <jenkinsServerSetting
-    	daemonName="jekins"
-    	jenkinsRootPath="/var/lib/jenkins"
-    	jenkinsLogPath="/var/log/jenkins/jenkins.log"
+    	daemonName="jekins" jenkinsRootPath="/var/lib/jenkins" jenkinsLogPath="/var/log/jenkins/jenkins.log"
     	httpUse="true" httpPort="80" httpBindingAddress="192.168.1.10"
     	ajpUse="true" ajpPort="8009" ajpBindingAddress="192.168.1.10"
     	 />
-    <jenkinsExecUser
-    	userName="jenkins"
-    	password="password1234"
-    	uid="2200"
-    	homeDir="/opt/jenkins"
-    	 />
-
-    <seleniumGridSetting
-    	daemonName="seleniumGrid"
-    	seleniumRootPath="/var/lib/selenium"
-    	 />
-    <seleniumExecUser
-    	userName="seleniumGrid"
-    	password="password1234"
-    	uid="2300"
-    	homeDir="/opt/jenkins"
-    	 />
+    <jenkinsExecUser userName="jenkins" password="password1234" uid="2200" homeDir="/opt/jenkins" />
+    <seleniumGridSetting daemonName="seleniumGrid" seleniumRootPath="/var/lib/selenium" />
+    <seleniumExecUser userName="seleniumGrid" password="password1234" uid="2300" homeDir="/opt/jenkins" />
   </body>
-</jenkinsInputJson>
+</inputJson>

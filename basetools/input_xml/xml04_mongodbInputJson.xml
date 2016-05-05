@@ -1,13 +1,9 @@
-<mongodbInputJson>
-  <header requestTime="2016/10/04 10:10:25.333" requestName="mongodb" />
+<inputJson>
+ <header requestTime="2016/10/04 10:10:25.333" requestName="jenkinsslave" envet=""/>
   <body>
-    <marinadbSetting
-    	install="true"
-    	daemonName="tomcat"
-    	dataSaveDir="/var/lib/mytql/data"
-    	sockFile="/var/lib/mytql/data/mysql.sock"
-    	dataBaseName="assured"
-    	userName="assuredUser"
+    <mongoDbSetting
+    	install="true" daemonName="tomcat" dataSaveDir="/var/lib/mytql/data"
+    	sockFile="/var/lib/mytql/data/mysql.sock" dataBaseName="assured" userName="assuredUser"
     	password="assuredPassword"/>
   </body>
-</mongodbInputJson>
+</inputJson>

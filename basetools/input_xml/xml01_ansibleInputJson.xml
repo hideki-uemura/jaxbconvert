@@ -1,5 +1,5 @@
-<ansibleInputJson>
-  <header requestTime="2016/10/04 10:10:25.333" requestName="ansible" />
+<inputJson>
+  <header requestTime="2016/10/04 10:10:25.333" requestName="ansible" envet="index"/>
   <body>
     <ansibleServerStting serverShubetu="ap" ipOrName="192.168.1.10" rootPass="dsadasd" />
     <ansibleServerStting serverShubetu="db" ipOrName="192.168.1.10" rootPass="dsadasd" />
@@ -7,4 +7,4 @@
     <ansibleExecUser userName="ap" password="192.168.1.10" uid="dsadasd" homedir="dsadasd" />
     <meimeiken meimeiken="ap" url="192.168.1.10" />
   </body>
-</ansibleInputJson>
+</inputJson>
