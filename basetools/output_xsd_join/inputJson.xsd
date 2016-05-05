@@ -10,7 +10,7 @@
   </xs:element>
   <xs:element name="header">
     <xs:complexType>
-      <xs:attribute name="envet" use="required" type="xs:NCName"/>
+      <xs:attribute name="event" use="required" type="xs:NCName"/>
       <xs:attribute name="requestName" use="required" type="xs:NCName"/>
       <xs:attribute name="requestTime" use="required"/>
     </xs:complexType>

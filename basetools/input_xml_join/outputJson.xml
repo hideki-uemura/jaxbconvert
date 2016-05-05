@@ -1,0 +1,62 @@
+<inputJson>
+  <header requestTime="2016/10/04 10:10:25.333" requestName="ansible" event="index"/>
+  <body>
+	<!-- ▼ansible▼ -->
+	<ansible>
+	    <ansibleServerStting serverShubetu="ap" ipOrName="192.168.1.10" rootPass="dsadasd" />
+	    <ansibleServerStting serverShubetu="db" ipOrName="192.168.1.10" rootPass="dsadasd" />
+	    <ansibleServerStting serverShubetu="jenkins" ipOrName="192.168.1.10" rootPass="dsadasd" />
+	    <ansibleExecUser userName="ap" password="192.168.1.10" uid="dsadasd" homedir="dsadasd" />
+	    <meimeiken meimeiken="ap" url="192.168.1.10" />
+    </ansible>
+	<!-- ▲ansible▲ -->
+	<!-- ▼tomcat▼ -->
+	<tomcat>
+    	<java install="true" javaHome="/opt/share/java" />
+	    <tomcatSetting install="true" daemonName="tomcat" tomcatRootPath="/opt/tomcat" tomcatLogPath="/var/log/tomcat/catalina.out"
+	    	useHttp="true" httpBindAddress="192.168.1.10" httpProt="80"
+	    	useAjp="true" ajpBindAddress="192.168.1.10" ajpProt="8009" />
+	    <tomcatExecUser userName="tomcat" password="password1234" uid="2400" homeDir="/opt/tomcat" />
+	    <webApplicationSetting webAppLogPath="/var/log/assuhred/app.log" saveKikan="10" />
+    </tomcat>
+	<!-- ▲tomcat▲ -->
+	<!-- ▼mariaDB▼ -->
+	<marinaDb>
+	    <marinaDbSetting
+	    	install="true" dataSaveDir="/var/lib/mytql/data" sockFile="/var/lib/mytql/data/mysql.sock"
+	    	dataBaseName="assured" userName="assuredUser" password="assuredPassword"/>
+	</marinaDb>
+	<!-- ▲mariaDB▲ -->
+	<!-- ▼marinaDB▼ -->
+	<mongoDb>
+	    <mongoDbSetting
+	    	install="true" daemonName="tomcat" dataSaveDir="/var/lib/mytql/data"
+	    	sockFile="/var/lib/mytql/data/mysql.sock" dataBaseName="assured" userName="assuredUser"
+	    	password="assuredPassword"/>
+	</mongoDb>
+	<!-- ▲marinaDB▲ -->
+	<!-- ▼jenkinsServer▼ -->
+	<jenkinsServer>
+	    <java install="true" javaHome="/opt/share/java" />
+	    <jenkinsServerSetting
+	    	daemonName="jekins" jenkinsRootPath="/var/lib/jenkins" jenkinsLogPath="/var/log/jenkins/jenkins.log"
+	    	httpUse="true" httpPort="80" httpBindingAddress="192.168.1.10"
+	    	ajpUse="true" ajpPort="8009" ajpBindingAddress="192.168.1.10" />
+	    <jenkinsServerExecUser userName="jenkins" password="password1234" uid="2200" homeDir="/opt/jenkins" />
+	    <seleniumGridSetting daemonName="seleniumGrid" seleniumRootPath="/var/lib/selenium" />
+	    <seleniumGridExecUser userName="seleniumGrid" password="password1234" uid="2300" homeDir="/opt/jenkins" />
+    	<maven install="true" mavenRootPath="/opt/maven" />
+	</jenkinsServer>
+	<!-- ▲jenkinsServer▲ -->
+	<!-- ▼jenkinsSlave▼ -->
+	<jenkinsSlave>
+	    <java install="true" javaHome="/opt/share/java" />
+	    <jenkinsSlaveSetting jenkinsSlaveRootPath="/opt/jekinsslave" jenkinsWorkspace="/opt/jekinsslave/workspace" />
+	    <jenkinsExecUser userName="jenkins" password="password1234" uid="2200" homeDir="/opt/tomcat" />
+	    <seleniumServerSetting daemonName="seleniumServer" seleniumSererRootPath="/var/lib/selenium-serer" />
+	    <seleniumServerExecUser userName="seleniumServer" password="password1234" uid="2400" />
+    	<maven install="true" mavenRootPath="/opt/maven" />
+	</jenkinsSlave>
+	<!-- ▲jenkinsSlave▲ -->
+  </body>
+</inputJson>
