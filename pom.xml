@@ -22,6 +22,12 @@
 			<artifactId>lombok</artifactId>
 			<version>1.16.8</version>
 		</dependency>
+		<dependency>
+			<groupId>com.thaiopensource</groupId>
+			<artifactId>trang</artifactId>
+			<version>20091111</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -39,7 +45,7 @@
 						<groupId>org.springframework.boot</groupId>
 						<artifactId>spring-boot-starter-tomcat</artifactId>
 						<version>1.2.6.RELEASE</version>
-<!-- 						<scope>provided</scope> -->
+						<!-- <scope>provided</scope> -->
 					</dependency>
 				</dependencies>
 			</plugin>
