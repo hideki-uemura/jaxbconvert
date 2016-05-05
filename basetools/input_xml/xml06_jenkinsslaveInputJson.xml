@@ -1,0 +1,34 @@
+<jenkinsslaveInputJson>
+ <header requestTime="2016/10/04 10:10:25.333" requestName="jenkinsslave" />
+  <body>
+    <java
+    	install="true"
+    	javaHome="/opt/share/java"
+    />
+    <jenkinsSlaveSetting
+    	jenkinsSlaveRootPath="/opt/jekinsslave"
+    	jenkinsWorkspace="/opt/jekinsslave/workspace"
+    	 />
+    <jenkinsExecUser
+    	userName="jenkins"
+    	password="password1234"
+    	uid="2200"
+    	homeDir="/opt/tomcat"
+    	 />
+
+    <seleniumServerSetting
+    	daemonName="seleniumServer"
+    	seleniumSererRootPath="/var/lib/selenium-serer"
+    	 />
+    <seleniumServerExecUser
+    	userName="seleniumServer"
+    	password="password1234"
+    	uid="2400"
+    	 />
+    <maven
+    	install="true"
+    	mavenRootPath="/opt/maven"
+    	 />
+
+  </body>
+</jenkinsslaveInputJson>

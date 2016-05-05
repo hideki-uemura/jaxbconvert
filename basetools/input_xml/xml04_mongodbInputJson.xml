@@ -1,0 +1,13 @@
+<mongodbInputJson>
+  <header requestTime="2016/10/04 10:10:25.333" requestName="mongodb" />
+  <body>
+    <marinadbSetting
+    	install="true"
+    	daemonName="tomcat"
+    	dataSaveDir="/var/lib/mytql/data"
+    	sockFile="/var/lib/mytql/data/mysql.sock"
+    	dataBaseName="assured"
+    	userName="assuredUser"
+    	password="assuredPassword"/>
+  </body>
+</mongodbInputJson>

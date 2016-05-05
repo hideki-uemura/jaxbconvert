@@ -1,0 +1,27 @@
+<tomcatInputJson>
+  <header requestTime="2016/10/04 10:10:25.333" requestName="mariaDb" />
+  <body>
+    <java
+    	install="true"
+    	javaHome="/opt/share/java"
+    />
+    <tomcatSetting
+    	install="true"
+    	daemonName="tomcat"
+    	tomcatRootPath="/opt/tomcat"
+    	tomcatLogPath="/var/log/tomcat/catalina.out"
+    	useHttp="true" httpBindAddress="192.168.1.10" httpProt="80"
+    	useAjp="true" ajpBindAddress="192.168.1.10" ajpProt="8009"
+    	/>
+    <tomcatExecUser
+    	userName="tomcat"
+    	password="password1234"
+    	uid="2400"
+    	homeDir="/opt/tomcat"
+    	 />
+    <webApplicationSetting
+    	webAppLogPath="/var/log/assuhred/app.log"
+    	saveKikan="10"
+    	 />
+  </body>
+</tomcatInputJson>
